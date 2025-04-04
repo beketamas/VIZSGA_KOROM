@@ -1,0 +1,80 @@
+﻿<Window x:Class="VIZSGA_KOROM_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VIZSGA_KOROM_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.ColumnSpan="3" x:Name="dgAutok" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Sorszam" Binding="{Binding Sorszam}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Marka" Binding="{Binding Marka}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}"></DataGridTextColumn>
+                <DataGridTextColumn Header="GyartasiEv" Binding="{Binding GyartasiEv}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Feher" Binding="{Binding Feher}"></DataGridTextColumn>
+                <DataGridTextColumn Header="EladottDarabSzam" Binding="{Binding EladottDarabSzam}"></DataGridTextColumn>
+                <DataGridTextColumn Header="AtlagosEladasiAr" Binding="{Binding AtlagosEladasiAr}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <ListBox x:Name="lbAutok"
+                 Grid.Row="1"
+                 Width="200"
+                 Height="180">
+            
+        </ListBox>
+
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Width="50"
+               Height="50"
+               Content="Év:"
+               VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Center"
+               HorizontalAlignment="Left"
+               Margin="50 0 0 0">
+            
+        </Label>
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Width="50"
+                 Height="50"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Center"
+                 Name="tbEv">
+            
+        </TextBox>
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Width="50"
+                Height="25"
+                VerticalAlignment="Bottom"
+                Margin="0 0 100 0"
+                Content="Betölt"
+                x:Name="btnBetolt">
+            
+        </Button>
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Width="50"
+                Height="25"
+                VerticalAlignment="Bottom"
+                Margin="0 0 -100 0"
+                Content="Bezár"
+                x:Name="btnBezar">
+
+        </Button>
+    </Grid>
+</Window>
