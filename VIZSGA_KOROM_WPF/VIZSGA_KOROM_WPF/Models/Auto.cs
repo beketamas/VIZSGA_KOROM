@@ -37,6 +37,6 @@ namespace VIZSGA_KOROM.Models
         public int EladottDarabSzam { get => eladottDarabSzam; set => eladottDarabSzam = value; }
         public double AtlagosEladasiAr { get => atlagosEladasiAr; set => atlagosEladasiAr = value; }
 
-        public static List<Auto> ReadCSV(string nev) => [.. File.ReadLines("autok.csv").Skip(1).Select(x => new Auto(x.Split(";")))];
+        public static List<Auto> ReadCSV(string nev) => [.. File.ReadLines(nev).Skip(1).Select(x => new Auto(x.Split(";")))];
     }
 }

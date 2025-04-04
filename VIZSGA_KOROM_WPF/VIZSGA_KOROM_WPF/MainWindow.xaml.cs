@@ -26,7 +26,7 @@ public partial class MainWindow : Window
         btnBetolt.Click += (s, e) => 
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
+            if (openFileDialog.ShowDialog() == true && s is Button)
             {
                 try
                 {
