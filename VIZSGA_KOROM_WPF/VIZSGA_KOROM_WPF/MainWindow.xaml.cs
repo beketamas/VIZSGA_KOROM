@@ -22,7 +22,9 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
-        List<Auto> autok = [];
+        ObservableCollection<Auto> autok = [];
+        dgAutok.ItemsSource = autok;
+
         btnBetolt.Click += (s, e) => 
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -31,7 +33,6 @@ public partial class MainWindow : Window
                 try
                 {
                     autok = Auto.ReadCSV(openFileDialog.FileName);
-                    dgAutok.ItemsSource = autok;
 
                 }
                 catch (Exception n)

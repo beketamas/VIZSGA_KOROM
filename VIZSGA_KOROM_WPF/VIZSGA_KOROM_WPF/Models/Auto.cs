@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -37,6 +38,6 @@ namespace VIZSGA_KOROM.Models
         public int EladottDarabSzam { get => eladottDarabSzam; set => eladottDarabSzam = value; }
         public double AtlagosEladasiAr { get => atlagosEladasiAr; set => atlagosEladasiAr = value; }
 
-        public static List<Auto> ReadCSV(string nev) => [.. File.ReadLines(nev).Skip(1).Select(x => new Auto(x.Split(";")))];
+        public static ObservableCollection<Auto> ReadCSV(string nev) => [.. File.ReadLines(nev).Skip(1).Select(x => new Auto(x.Split(";")))];
     }
 }
