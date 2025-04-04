@@ -48,12 +48,16 @@ public partial class MainWindow : Window
         };
         btnBezar.Click += (s, e) =>
         {
-            var valasz = MessageBox.Show("Bizots ki akar lépni?", "?" , MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (s is Button)
+            {
+                var valasz = MessageBox.Show("Bizots ki akar lépni?", "?" , MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            if (valasz == MessageBoxResult.Yes)
-                Close();
+                if (valasz == MessageBoxResult.Yes)
+                    Close();
 
-            return;
+                return;
+                
+            }
         };
     }
 }
